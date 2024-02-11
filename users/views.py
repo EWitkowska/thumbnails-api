@@ -9,6 +9,12 @@ User = get_user_model()
 
 
 class UserViewSet(ModelViewSet):
+    """
+
+    Note: For Basic Authentication, please use your email as the username.
+
+    """
+
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [IsAuthenticated]
@@ -25,6 +31,12 @@ class UserViewSet(ModelViewSet):
 
 
 class AccountViewSet(ReadOnlyModelViewSet):
+    """
+
+    Note: For Basic Authentication, please use your email as the username.
+
+    """
+
     serializer_class = AccountSerializer
-    queryset = Account.objects.all()
+    queryset = Account.objects.all().order_by("id")
     permission_classes = [IsAdminUser]

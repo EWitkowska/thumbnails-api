@@ -1,0 +1,65 @@
+- model: users.Account
+  pk: 1
+  fields:
+    name: Basic
+    thumbnail_dimensions: [1]
+    can_retrieve_original_image: False
+    can_generate_expiring_link: False
+- model: users.Account
+  pk: 2
+  fields:
+    name: Premium
+    thumbnail_dimensions: [1, 2]
+    can_retrieve_original_image: True
+    can_generate_expiring_link: False
+- model: users.Account
+  pk: 3
+  fields:
+    name: Enterprise
+    thumbnail_dimensions: [1, 2]
+    can_retrieve_original_image: True
+    can_generate_expiring_link: True
+- model: users.User
+  pk: 1
+  fields:
+    password: pbkdf2_sha256$600000$8dDqS6wP6NaySl6M2kLrmc$wD7LaEVoBp3H6VVjmHDrlTw6WOMCPHD2zy6Ro9EFWno=
+    is_superuser: True
+    is_staff: True
+    is_active: True
+    email: admin@example.com
+    account_type: null
+    groups: []
+    user_permissions: []
+- model: users.User
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$600000$JRrJlkYk55LKUMONcN6nQd$ToUDJeCX6rBbZg20lgnl2CK73TNgK0n/BFWJPLjwhMg=
+    is_superuser: False
+    is_staff: False
+    is_active: True
+    email: user1@example.com
+    account_type: 1
+    groups: []
+    user_permissions: []
+- model: users.User
+  pk: 3
+  fields:
+    password: pbkdf2_sha256$600000$ME6i3KyAp1RSG6SrXHTUcl$rJmiCg0GcV/NvMY0cIDFRhDsQJEdymG3QgzIkHPXvy0=
+    is_superuser: False
+    is_staff: False
+    is_active: True
+    email: user2@example.com
+    account_type: 2
+    groups: []
+    user_permissions: []
+- model: users.User
+  pk: 4
+  fields:
+    password: pbkdf2_sha256$600000$XEZPRhoQXFcSdjJ6w5QFGl$zjOaPW/KMAswVW8w2nE0wvn/L0pIg1HYwdfR7ptOsYo=
+    is_superuser: False
+    is_staff: False
+    is_active: True
+    email: user3@example.com
+    account_type: 3
+    groups: []
+    user_permissions: []

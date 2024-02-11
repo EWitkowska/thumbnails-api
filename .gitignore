@@ -54,7 +54,6 @@ coverage.xml
 staticfiles/
 media/
 db.sqlite3
-migrations/
 
 # Sphinx documentation
 docs/_build/

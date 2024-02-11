@@ -11,14 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
-import sys
 from pathlib import Path
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-env = environ.Env()
+env = environ.Env(DEBUG=(bool, False))
 env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +27,7 @@ env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
+DEBUG = env("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -44,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "thumbnails_api",
     "rest_framework",
     "drf_spectacular",
     "celery",
@@ -56,6 +56,18 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.NamespaceVersioning",
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "PAGE_SIZE": 50,
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Thumbnails API",
+    "DESCRIPTION": "API for generating and retrieving image thumbnails and creating expiring links to the images.",
+    "VERSION": "1.0.0",
+    "AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
+    ],
 }
 
 # Custom user model
@@ -132,7 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Warsaw"
 
 USE_I18N = True
 
@@ -142,9 +154,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # Storage settings
@@ -170,6 +182,7 @@ AWS_S3_SIGNATURE_VERSION = "s3v4"
 # Celery settings
 CELERY_BROKER_URL = env("CELERY_BROKER_URL")
 CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND")
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
