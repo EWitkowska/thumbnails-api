@@ -128,7 +128,7 @@ This API allows you to upload images and generate thumbnails. Here's a quick ove
    python manage.py runserver
    ```
 
-   Now, you can access the application at http://127.0.1:8000
+   Now, you can access the application at http://127.0.0.1:8000
 
 ## Docker Installation
 
@@ -185,7 +185,7 @@ This API allows you to upload images and generate thumbnails. Here's a quick ove
    docker-compose up
    ```
 
-   Now, you can access the application at http://127.0.1:80
+   Now, you can access the application at http://127.0.0.1:80
 
 ## Demo Data
 
@@ -215,9 +215,9 @@ This API uses both Swagger and Redoc for documentation and interactive explorati
 
 - **Swagger UI**:
 
-  - **Local Installation**: [http://127.0.1:8000/api/v1/schema/swagger-ui/](http://127.0.1:8000/api/v1/schema/swagger-ui/)
-  - **Docker Installation**: [http://127.0.1:80/api/v1/schema/swagger-ui/](http://127.0.1:80/api/v1/schema/swagger-ui/)
+  - **Local Installation**: [http://127.0.0.1:8000/api/v1/schema/swagger-ui/](http://127.0.0.1:8000/api/v1/schema/swagger-ui/)
+  - **Docker Installation**: [http://127.0.0.1:80/api/v1/schema/swagger-ui/](http://127.0.0.1:80/api/v1/schema/swagger-ui/)
 
 - **Redoc UI**:
-  - **Local Installation**: [http://127.0.1:8000/api/v1/schema/redoc/](http://127.0.1:8000/api/v1/schema/redoc/)
-  - **Docker Installation**: [http://127.0.1:80/api/v1/schema/redoc/](http://127.0.1:80/api/v1/schema/redoc/)
+  - **Local Installation**: [http://127.0.0.1:8000/api/v1/schema/redoc/](http://127.0.0.1:8000/api/v1/schema/redoc/)
+  - **Docker Installation**: [http://127.0.0.1:80/api/v1/schema/redoc/](http://127.0.0.1:80/api/v1/schema/redoc/)
