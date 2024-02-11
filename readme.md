@@ -144,13 +144,7 @@ This API allows you to upload images and generate thumbnails. Here's a quick ove
    cd thumbnails_api
    ```
 
-3. **Build the Docker image**:
-
-   ```bash
-   docker-compose build
-   ```
-
-4. **Set up the environment variables**:
+3. **Set up the environment variables**:
 
    Create a `.env` file in the root directory and set the following variables.
    You can use the `.env.template` file as a starting point:
@@ -179,6 +173,12 @@ This API allows you to upload images and generate thumbnails. Here's a quick ove
 
    Please note that you need to configure AWS S3 on your own. Make sure to replace the AWS variables with your actual AWS S3 bucket name, region, access key ID, secret access key, and other settings.
 
+4. **Build the Docker image**:
+
+   ```bash
+   docker-compose build
+   ```
+
 5. **Run the Docker containers**:
 
    ```bash
@@ -186,6 +186,28 @@ This API allows you to upload images and generate thumbnails. Here's a quick ove
    ```
 
    Now, you can access the application at http://127.0.1:80
+
+## Demo Data
+
+For demo purposes I've added users, an admin user, and predefined thumbnail dimensions to the database.
+
+## Demo Credentials
+
+For the admin account - can log in to Django admin:
+
+- **Email**: admin@example.com
+- **Password**: Blank2211
+
+For users:
+
+- **Email**: user1@example.com
+- **Password**: Blank2211
+
+- **Email**: user2@example.com
+- **Password**: Blank2211
+
+- **Email**: user3@example.com
+- **Password**: Blank2211
 
 ## API Documentation
 
