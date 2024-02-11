@@ -1,0 +1,10 @@
+- model: thumbnails.ThumbnailDimension
+  pk: 1
+  fields:
+    width: 200
+    height: 200
+- model: thumbnails.ThumbnailDimension
+  pk: 2
+  fields:
+    width: 400
+    height: 400
