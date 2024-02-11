@@ -26,6 +26,30 @@ This API supports three built-in account tiers: Basic, Premium, and Enterprise.
 
 Admin users have the ability to extend the functionality of the API. They can add new account tiers, modify the capabilities of existing tiers, and create new sizes of thumbnails.
 
+## Usage
+
+This API allows you to upload images and generate thumbnails. Here's a quick overview of the functionality:
+
+1. **API Root**: The API root provides an overview of all the available endpoints:
+
+   ![API Root](assets/api-root.png)
+
+2. **Upload an Image**: You can upload an image using the `/api/v1/images/` endpoint:
+
+   ![Upload Image](assets/upload-image.png)
+
+3. **Get an Image**: You can get a specific image using the `/api/v1/images/{image_id}/` endpoint:
+
+   ![Get Image](assets/get-image.png)
+
+4. **Make an Expiring Link**: You can make an expiring link for an image using the `/api/v1/expiring-links/` endpoint:
+
+   ![Make Expiring Link](assets/make-expiring-link.png)
+
+5. **Get an Expiring Link**: You can get an expiring link for an image using the `/api/v1/expiring-links/{image_id}`:
+
+   ![Get Expiring Link](assets/get-expiring-link.png)
+
 ## Future Updates
 
 This README is a work in progress and will be updated.
